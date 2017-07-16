@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.watercraft.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap.watercraft.org" xmlns:intf="http://soap.watercraft.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap.watercraft.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getWatercraft">
+    <complexType>
+     <sequence>
+      <element name="watercraftId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getWatercraftResponse">
+    <complexType>
+     <sequence>
+      <element name="getWatercraftReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getWatercraftResponse">
+
+      <wsdl:part element="impl:getWatercraftResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getWatercraftRequest">
+
+      <wsdl:part element="impl:getWatercraft" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SimpleWatercraftWebService">
+
+      <wsdl:operation name="getWatercraft">
+
+         <wsdl:input message="impl:getWatercraftRequest" name="getWatercraftRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getWatercraftResponse" name="getWatercraftResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SimpleWatercraftWebServiceSoapBinding" type="impl:SimpleWatercraftWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getWatercraft">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getWatercraftRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getWatercraftResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SimpleWatercraftWebServiceService">
+
+      <wsdl:port binding="impl:SimpleWatercraftWebServiceSoapBinding" name="SimpleWatercraftWebService">
+
+         <wsdlsoap:address location="http://localhost:8080/WatercraftHQ-SOAP/services/SimpleWatercraftWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
