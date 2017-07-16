@@ -6,7 +6,6 @@
 		<project>WatercraftHQ-EJB</project>
 		<project>WatercraftHQ-Persistence</project>
 		<project>WatercraftHQ-Web</project>
-		<project>WatercraftHQ-SOAP</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
