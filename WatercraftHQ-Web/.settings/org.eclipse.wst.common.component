@@ -2,7 +2,7 @@
     <wb-module deploy-name="WatercraftHQ-Web">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/WatercraftHQ-Web/build/classes"/>
         <property name="context-root" value="WatercraftHQ-Web"/>
+        <property name="java-output-path" value="/WatercraftHQ-Web/build/classes"/>
     </wb-module>
 </project-modules>
