@@ -9,9 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
-public abstract class Watercraft implements java.io.Serializable {
-	
+public class Member implements java.io.Serializable{
+
 	///////////////
 	// Variables //
 	///////////////
@@ -19,39 +20,39 @@ public abstract class Watercraft implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	protected int watercraftId;
+	private int memberId;
 	
 	@NotNull
-	protected String name;
-	
+	private String name;
+
 	@ManyToMany
-	private Collection<Member> members;
-	
+	private Collection<Watercraft> watercrafts;
+
 	/////////////
 	// Methods //
 	/////////////
-	public int getWatercraftId() {
-		return this.watercraftId;
-	}
-	
-	public void setWatercraftId(int watercraftId) {
-		this.watercraftId = watercraftId;
+	public int getMemberId() {
+		return memberId;
 	}
 
+	public void setMemberId(int memberId) {
+		this.memberId = memberId;
+	}
+	
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Collection<Member> getMembers() {
-		return members;
+	
+	public Collection<Watercraft> getWatercrafts() {
+		return watercrafts;
 	}
 
-	public void setMembers(Collection<Member> members) {
-		this.members = members;
+	public void setWatercrafts(Collection<Watercraft> watercrafts) {
+		this.watercrafts = watercrafts;
 	}
-
+	
 }

@@ -12,5 +12,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/Jan/Developer/ACSE/Exam1/wildfly-10.1.0.Final/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
