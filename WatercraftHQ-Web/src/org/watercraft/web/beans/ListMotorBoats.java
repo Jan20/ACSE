@@ -5,7 +5,7 @@ import java.util.Collection;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
-import org.watercraft.MotorBoatService;
+import org.watercraft.session.beans.MotorBoatService;
 import org.watercraft.ejb.MotorBoat;
 
 @ManagedBean

@@ -3,7 +3,7 @@ package org.watercraft.web.beans;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
-import org.watercraft.MemberService;
+import org.watercraft.session.beans.MemberService;
 import org.watercraft.ejb.Member;
 
 @ManagedBean

@@ -1,12 +1,10 @@
 package org.watercraft.web.beans;
 
 import javax.ejb.EJB;
-import javax.ejb.EJBException;
 import javax.faces.bean.ManagedBean;
 
-import org.watercraft.MotorBoatService;
+import org.watercraft.session.beans.MotorBoatService;
 import org.watercraft.ejb.MotorBoat;
-import org.watercraft.ejb.Watercraft;
 
 /**
 * 
