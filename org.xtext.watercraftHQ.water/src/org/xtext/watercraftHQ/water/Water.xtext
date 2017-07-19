@@ -1,0 +1,22 @@
+grammar org.xtext.watercraftHQ.water.Water with org.eclipse.xtext.common.Terminals
+
+generate water "http://www.xtext.org/watercraftHQ/water/Water"
+
+Domainmodel :
+    (elements += Component)*;
+  
+Component:
+    WaterClass | WaterVariable;
+  
+WaterClass:
+    'waterClass' name=ID '{'
+    		(variables+=WaterVariable)*
+    	'}'
+;
+ 
+ WaterVariables:
+ 	waterVariables += WaterVariable;
+ 
+ WaterVariable:
+ 	'waterVariable' name=ID;
+ 
