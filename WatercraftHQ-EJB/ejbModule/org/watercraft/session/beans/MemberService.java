@@ -11,6 +11,8 @@ public interface MemberService {
 
 	public void createMember(String name);
 	
+	public void create(Member member);
+	
 	public Member findMember(int memberId);
 	
 	public Collection<Member> findMembers();

@@ -24,6 +24,13 @@ public class MemberServiceBean implements MemberService{
 		em.persist(member);
 		
 	}
+	
+	@Override
+	public void create(Member member) {
+		
+		em.persist(member);
+		
+	}
 
 	@Override
 	public Member findMember(int memberId) {
@@ -42,6 +49,7 @@ public class MemberServiceBean implements MemberService{
 	public Collection<Member> findMembers() {
 		
 		Collection<Member> members = em.createQuery("FROM Member", Member.class).getResultList();
+		System.out.println(members);
 		return members;
 	
 	}

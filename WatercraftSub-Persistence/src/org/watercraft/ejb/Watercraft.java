@@ -2,7 +2,9 @@ package org.watercraft.ejb;
 
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +26,7 @@ public abstract class Watercraft implements java.io.Serializable {
 	@NotNull
 	protected String name;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="watercrafts", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch=FetchType.EAGER)
 	private Collection<Member> members;
 	
 	/////////////
