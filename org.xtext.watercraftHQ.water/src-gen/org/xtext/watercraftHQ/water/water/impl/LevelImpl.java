@@ -4,54 +4,33 @@
 package org.xtext.watercraftHQ.water.water.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.watercraftHQ.water.water.Feature;
-import org.xtext.watercraftHQ.water.water.Type;
+import org.xtext.watercraftHQ.water.water.Field;
+import org.xtext.watercraftHQ.water.water.Level;
 import org.xtext.watercraftHQ.water.water.WaterPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Feature</b></em>'.
+ * An implementation of the model object '<em><b>Level</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.watercraftHQ.water.water.impl.FeatureImpl#isMany <em>Many</em>}</li>
- *   <li>{@link org.xtext.watercraftHQ.water.water.impl.FeatureImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.watercraftHQ.water.water.impl.FeatureImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.watercraftHQ.water.water.impl.LevelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.watercraftHQ.water.water.impl.LevelImpl#getField <em>Field</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
+public class LevelImpl extends TypeImpl implements Level
 {
-  /**
-   * The default value of the '{@link #isMany() <em>Many</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMany()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean MANY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isMany() <em>Many</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isMany()
-   * @generated
-   * @ordered
-   */
-  protected boolean many = MANY_EDEFAULT;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -73,21 +52,21 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The cached value of the '{@link #getField() <em>Field</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getField()
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected Field field;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeatureImpl()
+  protected LevelImpl()
   {
     super();
   }
@@ -100,30 +79,7 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   @Override
   protected EClass eStaticClass()
   {
-    return WaterPackage.Literals.FEATURE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isMany()
-  {
-    return many;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMany(boolean newMany)
-  {
-    boolean oldMany = many;
-    many = newMany;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WaterPackage.FEATURE__MANY, oldMany, many));
+    return WaterPackage.Literals.LEVEL;
   }
 
   /**
@@ -146,7 +102,7 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WaterPackage.FEATURE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, WaterPackage.LEVEL__NAME, oldName, name));
   }
 
   /**
@@ -154,19 +110,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public Field getField()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (Type)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, WaterPackage.FEATURE__TYPE, oldType, type));
-      }
-    }
-    return type;
+    return field;
   }
 
   /**
@@ -174,22 +120,53 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type basicGetType()
+  public NotificationChain basicSetField(Field newField, NotificationChain msgs)
   {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(Type newType)
-  {
-    Type oldType = type;
-    type = newType;
+    Field oldField = field;
+    field = newField;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WaterPackage.FEATURE__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WaterPackage.LEVEL__FIELD, oldField, newField);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setField(Field newField)
+  {
+    if (newField != field)
+    {
+      NotificationChain msgs = null;
+      if (field != null)
+        msgs = ((InternalEObject)field).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WaterPackage.LEVEL__FIELD, null, msgs);
+      if (newField != null)
+        msgs = ((InternalEObject)newField).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WaterPackage.LEVEL__FIELD, null, msgs);
+      msgs = basicSetField(newField, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WaterPackage.LEVEL__FIELD, newField, newField));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case WaterPackage.LEVEL__FIELD:
+        return basicSetField(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -202,13 +179,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case WaterPackage.FEATURE__MANY:
-        return isMany();
-      case WaterPackage.FEATURE__NAME:
+      case WaterPackage.LEVEL__NAME:
         return getName();
-      case WaterPackage.FEATURE__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+      case WaterPackage.LEVEL__FIELD:
+        return getField();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -223,14 +197,11 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case WaterPackage.FEATURE__MANY:
-        setMany((Boolean)newValue);
-        return;
-      case WaterPackage.FEATURE__NAME:
+      case WaterPackage.LEVEL__NAME:
         setName((String)newValue);
         return;
-      case WaterPackage.FEATURE__TYPE:
-        setType((Type)newValue);
+      case WaterPackage.LEVEL__FIELD:
+        setField((Field)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -246,14 +217,11 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case WaterPackage.FEATURE__MANY:
-        setMany(MANY_EDEFAULT);
-        return;
-      case WaterPackage.FEATURE__NAME:
+      case WaterPackage.LEVEL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case WaterPackage.FEATURE__TYPE:
-        setType((Type)null);
+      case WaterPackage.LEVEL__FIELD:
+        setField((Field)null);
         return;
     }
     super.eUnset(featureID);
@@ -269,12 +237,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case WaterPackage.FEATURE__MANY:
-        return many != MANY_EDEFAULT;
-      case WaterPackage.FEATURE__NAME:
+      case WaterPackage.LEVEL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case WaterPackage.FEATURE__TYPE:
-        return type != null;
+      case WaterPackage.LEVEL__FIELD:
+        return field != null;
     }
     return super.eIsSet(featureID);
   }
@@ -290,12 +256,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (many: ");
-    result.append(many);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //FeatureImpl
+} //LevelImpl

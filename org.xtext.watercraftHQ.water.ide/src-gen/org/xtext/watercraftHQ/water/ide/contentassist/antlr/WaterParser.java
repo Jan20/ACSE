@@ -32,18 +32,30 @@ public class WaterParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
-					put(grammarAccess.getDataTypeAccess().getGroup(), "rule__DataType__Group__0");
-					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
-					put(grammarAccess.getEntityAccess().getGroup_2(), "rule__Entity__Group_2__0");
-					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
-					put(grammarAccess.getDomainmodelAccess().getElementsAssignment(), "rule__Domainmodel__ElementsAssignment");
-					put(grammarAccess.getDataTypeAccess().getNameAssignment_1(), "rule__DataType__NameAssignment_1");
-					put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
-					put(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_1(), "rule__Entity__SuperTypeAssignment_2_1");
-					put(grammarAccess.getEntityAccess().getFeaturesAssignment_4(), "rule__Entity__FeaturesAssignment_4");
-					put(grammarAccess.getFeatureAccess().getManyAssignment_0(), "rule__Feature__ManyAssignment_0");
-					put(grammarAccess.getFeatureAccess().getNameAssignment_1(), "rule__Feature__NameAssignment_1");
-					put(grammarAccess.getFeatureAccess().getTypeAssignment_3(), "rule__Feature__TypeAssignment_3");
+					put(grammarAccess.getItemAccess().getAlternatives_6(), "rule__Item__Alternatives_6");
+					put(grammarAccess.getLevelAccess().getGroup(), "rule__Level__Group__0");
+					put(grammarAccess.getFieldAccess().getGroup(), "rule__Field__Group__0");
+					put(grammarAccess.getRectangleAccess().getGroup(), "rule__Rectangle__Group__0");
+					put(grammarAccess.getHeroAccess().getGroup(), "rule__Hero__Group__0");
+					put(grammarAccess.getPositionAccess().getGroup(), "rule__Position__Group__0");
+					put(grammarAccess.getItemAccess().getGroup(), "rule__Item__Group__0");
+					put(grammarAccess.getComputerGameAccess().getElementsAssignment(), "rule__ComputerGame__ElementsAssignment");
+					put(grammarAccess.getLevelAccess().getNameAssignment_1(), "rule__Level__NameAssignment_1");
+					put(grammarAccess.getLevelAccess().getFieldAssignment_2(), "rule__Level__FieldAssignment_2");
+					put(grammarAccess.getFieldAccess().getRectangleAssignment_1(), "rule__Field__RectangleAssignment_1");
+					put(grammarAccess.getFieldAccess().getHerosAssignment_2(), "rule__Field__HerosAssignment_2");
+					put(grammarAccess.getFieldAccess().getItemsAssignment_3(), "rule__Field__ItemsAssignment_3");
+					put(grammarAccess.getRectangleAccess().getXAssignment_2(), "rule__Rectangle__XAssignment_2");
+					put(grammarAccess.getRectangleAccess().getYAssignment_4(), "rule__Rectangle__YAssignment_4");
+					put(grammarAccess.getHeroAccess().getPositionAssignment_1(), "rule__Hero__PositionAssignment_1");
+					put(grammarAccess.getHeroAccess().getIsBossAssignment_2(), "rule__Hero__IsBossAssignment_2");
+					put(grammarAccess.getPositionAccess().getXAssignment_1(), "rule__Position__XAssignment_1");
+					put(grammarAccess.getPositionAccess().getYAssignment_3(), "rule__Position__YAssignment_3");
+					put(grammarAccess.getItemAccess().getNameAssignment_1(), "rule__Item__NameAssignment_1");
+					put(grammarAccess.getItemAccess().getAttackBonusAssignment_3(), "rule__Item__AttackBonusAssignment_3");
+					put(grammarAccess.getItemAccess().getDefenseBonusAssignment_5(), "rule__Item__DefenseBonusAssignment_5");
+					put(grammarAccess.getItemAccess().getLocationAssignment_6_0(), "rule__Item__LocationAssignment_6_0");
+					put(grammarAccess.getItemAccess().getHeroAssignment_6_1(), "rule__Item__HeroAssignment_6_1");
 				}
 			};
 		}

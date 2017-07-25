@@ -65,11 +65,14 @@ public class WaterFactoryImpl extends EFactoryImpl implements WaterFactory
   {
     switch (eClass.getClassifierID())
     {
-      case WaterPackage.DOMAINMODEL: return createDomainmodel();
+      case WaterPackage.COMPUTER_GAME: return createComputerGame();
       case WaterPackage.TYPE: return createType();
-      case WaterPackage.DATA_TYPE: return createDataType();
-      case WaterPackage.ENTITY: return createEntity();
-      case WaterPackage.FEATURE: return createFeature();
+      case WaterPackage.LEVEL: return createLevel();
+      case WaterPackage.FIELD: return createField();
+      case WaterPackage.RECTANGLE: return createRectangle();
+      case WaterPackage.HERO: return createHero();
+      case WaterPackage.POSITION: return createPosition();
+      case WaterPackage.ITEM: return createItem();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -80,10 +83,10 @@ public class WaterFactoryImpl extends EFactoryImpl implements WaterFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Domainmodel createDomainmodel()
+  public ComputerGame createComputerGame()
   {
-    DomainmodelImpl domainmodel = new DomainmodelImpl();
-    return domainmodel;
+    ComputerGameImpl computerGame = new ComputerGameImpl();
+    return computerGame;
   }
 
   /**
@@ -102,10 +105,10 @@ public class WaterFactoryImpl extends EFactoryImpl implements WaterFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataType createDataType()
+  public Level createLevel()
   {
-    DataTypeImpl dataType = new DataTypeImpl();
-    return dataType;
+    LevelImpl level = new LevelImpl();
+    return level;
   }
 
   /**
@@ -113,10 +116,10 @@ public class WaterFactoryImpl extends EFactoryImpl implements WaterFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Entity createEntity()
+  public Field createField()
   {
-    EntityImpl entity = new EntityImpl();
-    return entity;
+    FieldImpl field = new FieldImpl();
+    return field;
   }
 
   /**
@@ -124,10 +127,43 @@ public class WaterFactoryImpl extends EFactoryImpl implements WaterFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Feature createFeature()
+  public Rectangle createRectangle()
   {
-    FeatureImpl feature = new FeatureImpl();
-    return feature;
+    RectangleImpl rectangle = new RectangleImpl();
+    return rectangle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Hero createHero()
+  {
+    HeroImpl hero = new HeroImpl();
+    return hero;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Position createPosition()
+  {
+    PositionImpl position = new PositionImpl();
+    return position;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Item createItem()
+  {
+    ItemImpl item = new ItemImpl();
+    return item;
   }
 
   /**

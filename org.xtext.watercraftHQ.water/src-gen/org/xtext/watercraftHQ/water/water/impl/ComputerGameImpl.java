@@ -17,24 +17,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.watercraftHQ.water.water.Domainmodel;
+import org.xtext.watercraftHQ.water.water.ComputerGame;
 import org.xtext.watercraftHQ.water.water.Type;
 import org.xtext.watercraftHQ.water.water.WaterPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Domainmodel</b></em>'.
+ * An implementation of the model object '<em><b>Computer Game</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.watercraftHQ.water.water.impl.DomainmodelImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.watercraftHQ.water.water.impl.ComputerGameImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Domainmodel
+public class ComputerGameImpl extends MinimalEObjectImpl.Container implements ComputerGame
 {
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -51,7 +51,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DomainmodelImpl()
+  protected ComputerGameImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   @Override
   protected EClass eStaticClass()
   {
-    return WaterPackage.Literals.DOMAINMODEL;
+    return WaterPackage.Literals.COMPUTER_GAME;
   }
 
   /**
@@ -76,7 +76,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<Type>(Type.class, this, WaterPackage.DOMAINMODEL__ELEMENTS);
+      elements = new EObjectContainmentEList<Type>(Type.class, this, WaterPackage.COMPUTER_GAME__ELEMENTS);
     }
     return elements;
   }
@@ -91,7 +91,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case WaterPackage.DOMAINMODEL__ELEMENTS:
+      case WaterPackage.COMPUTER_GAME__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -107,7 +107,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case WaterPackage.DOMAINMODEL__ELEMENTS:
+      case WaterPackage.COMPUTER_GAME__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -124,7 +124,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case WaterPackage.DOMAINMODEL__ELEMENTS:
+      case WaterPackage.COMPUTER_GAME__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends Type>)newValue);
         return;
@@ -142,7 +142,7 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case WaterPackage.DOMAINMODEL__ELEMENTS:
+      case WaterPackage.COMPUTER_GAME__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -159,10 +159,10 @@ public class DomainmodelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case WaterPackage.DOMAINMODEL__ELEMENTS:
+      case WaterPackage.COMPUTER_GAME__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //DomainmodelImpl
+} //ComputerGameImpl

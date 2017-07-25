@@ -15,10 +15,13 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.watercraftHQ.water.services.WaterGrammarAccess;
-import org.xtext.watercraftHQ.water.water.DataType;
-import org.xtext.watercraftHQ.water.water.Domainmodel;
-import org.xtext.watercraftHQ.water.water.Entity;
-import org.xtext.watercraftHQ.water.water.Feature;
+import org.xtext.watercraftHQ.water.water.ComputerGame;
+import org.xtext.watercraftHQ.water.water.Field;
+import org.xtext.watercraftHQ.water.water.Hero;
+import org.xtext.watercraftHQ.water.water.Item;
+import org.xtext.watercraftHQ.water.water.Level;
+import org.xtext.watercraftHQ.water.water.Position;
+import org.xtext.watercraftHQ.water.water.Rectangle;
 import org.xtext.watercraftHQ.water.water.WaterPackage;
 
 @SuppressWarnings("all")
@@ -35,17 +38,26 @@ public class WaterSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == WaterPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case WaterPackage.DATA_TYPE:
-				sequence_DataType(context, (DataType) semanticObject); 
+			case WaterPackage.COMPUTER_GAME:
+				sequence_ComputerGame(context, (ComputerGame) semanticObject); 
 				return; 
-			case WaterPackage.DOMAINMODEL:
-				sequence_Domainmodel(context, (Domainmodel) semanticObject); 
+			case WaterPackage.FIELD:
+				sequence_Field(context, (Field) semanticObject); 
 				return; 
-			case WaterPackage.ENTITY:
-				sequence_Entity(context, (Entity) semanticObject); 
+			case WaterPackage.HERO:
+				sequence_Hero(context, (Hero) semanticObject); 
 				return; 
-			case WaterPackage.FEATURE:
-				sequence_Feature(context, (Feature) semanticObject); 
+			case WaterPackage.ITEM:
+				sequence_Item(context, (Item) semanticObject); 
+				return; 
+			case WaterPackage.LEVEL:
+				sequence_Level(context, (Level) semanticObject); 
+				return; 
+			case WaterPackage.POSITION:
+				sequence_Position(context, (Position) semanticObject); 
+				return; 
+			case WaterPackage.RECTANGLE:
+				sequence_Rectangle(context, (Rectangle) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -54,57 +66,115 @@ public class WaterSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Type returns DataType
-	 *     DataType returns DataType
+	 *     ComputerGame returns ComputerGame
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     elements+=Type+
 	 */
-	protected void sequence_DataType(ISerializationContext context, DataType semanticObject) {
+	protected void sequence_ComputerGame(ISerializationContext context, ComputerGame semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Field returns Field
+	 *
+	 * Constraint:
+	 *     (rectangle=Rectangle heros+=Hero items+=Item*)
+	 */
+	protected void sequence_Field(ISerializationContext context, Field semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Type returns Hero
+	 *     Hero returns Hero
+	 *
+	 * Constraint:
+	 *     (position=Position isBoss?='isBoss'?)
+	 */
+	protected void sequence_Hero(ISerializationContext context, Hero semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Type returns Item
+	 *     Item returns Item
+	 *
+	 * Constraint:
+	 *     (name=ID attackBonus=INT defenseBonus=INT (location=Position | hero=[Hero|ID]))
+	 */
+	protected void sequence_Item(ISerializationContext context, Item semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Type returns Level
+	 *     Level returns Level
+	 *
+	 * Constraint:
+	 *     (name=ID field=Field)
+	 */
+	protected void sequence_Level(ISerializationContext context, Level semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.TYPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.LEVEL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.LEVEL__NAME));
+			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.LEVEL__FIELD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.LEVEL__FIELD));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLevelAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLevelAccess().getFieldFieldParserRuleCall_2_0(), semanticObject.getField());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Domainmodel returns Domainmodel
+	 *     Position returns Position
 	 *
 	 * Constraint:
-	 *     elements+=Type+
+	 *     (X=INT Y=INT)
 	 */
-	protected void sequence_Domainmodel(ISerializationContext context, Domainmodel semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Position(ISerializationContext context, Position semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.POSITION__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.POSITION__X));
+			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.POSITION__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.POSITION__Y));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPositionAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPositionAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Type returns Entity
-	 *     Entity returns Entity
+	 *     Rectangle returns Rectangle
 	 *
 	 * Constraint:
-	 *     (name=ID superType=[Entity|ID]? features+=Feature*)
+	 *     (X=INT Y=INT)
 	 */
-	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Feature returns Feature
-	 *
-	 * Constraint:
-	 *     (many?='many'? name=ID type=[Type|ID])
-	 */
-	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Rectangle(ISerializationContext context, Rectangle semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.RECTANGLE__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.RECTANGLE__X));
+			if (transientValues.isValueTransient(semanticObject, WaterPackage.Literals.RECTANGLE__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WaterPackage.Literals.RECTANGLE__Y));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRectangleAccess().getXINTTerminalRuleCall_2_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getRectangleAccess().getYINTTerminalRuleCall_4_0(), semanticObject.getY());
+		feeder.finish();
 	}
 	
 	

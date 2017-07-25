@@ -58,14 +58,14 @@ public interface WaterPackage extends EPackage
   WaterPackage eINSTANCE = org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.ComputerGameImpl <em>Computer Game</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.watercraftHQ.water.water.impl.DomainmodelImpl
-   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getDomainmodel()
+   * @see org.xtext.watercraftHQ.water.water.impl.ComputerGameImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getComputerGame()
    * @generated
    */
-  int DOMAINMODEL = 0;
+  int COMPUTER_GAME = 0;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -74,16 +74,16 @@ public interface WaterPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOMAINMODEL__ELEMENTS = 0;
+  int COMPUTER_GAME__ELEMENTS = 0;
 
   /**
-   * The number of structural features of the '<em>Domainmodel</em>' class.
+   * The number of structural features of the '<em>Computer Game</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOMAINMODEL_FEATURE_COUNT = 1;
+  int COMPUTER_GAME_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.TypeImpl <em>Type</em>}' class.
@@ -96,32 +96,23 @@ public interface WaterPackage extends EPackage
   int TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 1;
+  int TYPE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.DataTypeImpl <em>Data Type</em>}' class.
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.LevelImpl <em>Level</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.watercraftHQ.water.water.impl.DataTypeImpl
-   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getDataType()
+   * @see org.xtext.watercraftHQ.water.water.impl.LevelImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getLevel()
    * @generated
    */
-  int DATA_TYPE = 2;
+  int LEVEL = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -130,26 +121,192 @@ public interface WaterPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE__NAME = TYPE__NAME;
+  int LEVEL__NAME = TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Data Type</em>' class.
+   * The feature id for the '<em><b>Field</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+  int LEVEL__FIELD = TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.EntityImpl <em>Entity</em>}' class.
+   * The number of structural features of the '<em>Level</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.watercraftHQ.water.water.impl.EntityImpl
-   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getEntity()
+   * @generated
+   * @ordered
+   */
+  int LEVEL_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.FieldImpl <em>Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.watercraftHQ.water.water.impl.FieldImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getField()
    * @generated
    */
-  int ENTITY = 3;
+  int FIELD = 3;
+
+  /**
+   * The feature id for the '<em><b>Rectangle</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD__RECTANGLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Heros</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD__HEROS = 1;
+
+  /**
+   * The feature id for the '<em><b>Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD__ITEMS = 2;
+
+  /**
+   * The number of structural features of the '<em>Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.RectangleImpl <em>Rectangle</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.watercraftHQ.water.water.impl.RectangleImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getRectangle()
+   * @generated
+   */
+  int RECTANGLE = 4;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Rectangle</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECTANGLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.HeroImpl <em>Hero</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.watercraftHQ.water.water.impl.HeroImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getHero()
+   * @generated
+   */
+  int HERO = 5;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HERO__POSITION = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Boss</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HERO__IS_BOSS = TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Hero</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HERO_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.PositionImpl <em>Position</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.watercraftHQ.water.water.impl.PositionImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getPosition()
+   * @generated
+   */
+  int POSITION = 6;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Position</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.ItemImpl <em>Item</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.watercraftHQ.water.water.impl.ItemImpl
+   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getItem()
+   * @generated
+   */
+  int ITEM = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,102 +315,74 @@ public interface WaterPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY__NAME = TYPE__NAME;
+  int ITEM__NAME = TYPE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * The feature id for the '<em><b>Attack Bonus</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY__SUPER_TYPE = TYPE_FEATURE_COUNT + 0;
+  int ITEM__ATTACK_BONUS = TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
+   * The feature id for the '<em><b>Defense Bonus</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY__FEATURES = TYPE_FEATURE_COUNT + 1;
+  int ITEM__DEFENSE_BONUS = TYPE_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Entity</em>' class.
+   * The feature id for the '<em><b>Location</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+  int ITEM__LOCATION = TYPE_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.watercraftHQ.water.water.impl.FeatureImpl <em>Feature</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.watercraftHQ.water.water.impl.FeatureImpl
-   * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getFeature()
-   * @generated
-   */
-  int FEATURE = 4;
-
-  /**
-   * The feature id for the '<em><b>Many</b></em>' attribute.
+   * The feature id for the '<em><b>Hero</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__MANY = 0;
+  int ITEM__HERO = TYPE_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Item</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__NAME = 1;
+  int ITEM_FEATURE_COUNT = TYPE_FEATURE_COUNT + 5;
+
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.ComputerGame <em>Computer Game</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE__TYPE = 2;
-
-  /**
-   * The number of structural features of the '<em>Feature</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_FEATURE_COUNT = 3;
-
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Domainmodel <em>Domainmodel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Domainmodel</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Domainmodel
+   * @return the meta object for class '<em>Computer Game</em>'.
+   * @see org.xtext.watercraftHQ.water.water.ComputerGame
    * @generated
    */
-  EClass getDomainmodel();
+  EClass getComputerGame();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.watercraftHQ.water.water.Domainmodel#getElements <em>Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.watercraftHQ.water.water.ComputerGame#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Domainmodel#getElements()
-   * @see #getDomainmodel()
+   * @see org.xtext.watercraftHQ.water.water.ComputerGame#getElements()
+   * @see #getComputerGame()
    * @generated
    */
-  EReference getDomainmodel_Elements();
+  EReference getComputerGame_Elements();
 
   /**
    * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Type <em>Type</em>}'.
@@ -266,100 +395,240 @@ public interface WaterPackage extends EPackage
   EClass getType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Type#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Level <em>Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Level</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Level
+   * @generated
+   */
+  EClass getLevel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Level#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Type#getName()
-   * @see #getType()
+   * @see org.xtext.watercraftHQ.water.water.Level#getName()
+   * @see #getLevel()
    * @generated
    */
-  EAttribute getType_Name();
+  EAttribute getLevel_Name();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.DataType <em>Data Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.watercraftHQ.water.water.Level#getField <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Type</em>'.
-   * @see org.xtext.watercraftHQ.water.water.DataType
+   * @return the meta object for the containment reference '<em>Field</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Level#getField()
+   * @see #getLevel()
    * @generated
    */
-  EClass getDataType();
+  EReference getLevel_Field();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Entity <em>Entity</em>}'.
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Field <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Entity</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Entity
+   * @return the meta object for class '<em>Field</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Field
    * @generated
    */
-  EClass getEntity();
+  EClass getField();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.watercraftHQ.water.water.Entity#getSuperType <em>Super Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.watercraftHQ.water.water.Field#getRectangle <em>Rectangle</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Super Type</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Entity#getSuperType()
-   * @see #getEntity()
+   * @return the meta object for the containment reference '<em>Rectangle</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Field#getRectangle()
+   * @see #getField()
    * @generated
    */
-  EReference getEntity_SuperType();
+  EReference getField_Rectangle();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.watercraftHQ.water.water.Entity#getFeatures <em>Features</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.watercraftHQ.water.water.Field#getHeros <em>Heros</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Entity#getFeatures()
-   * @see #getEntity()
+   * @return the meta object for the containment reference list '<em>Heros</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Field#getHeros()
+   * @see #getField()
    * @generated
    */
-  EReference getEntity_Features();
+  EReference getField_Heros();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Feature <em>Feature</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.watercraftHQ.water.water.Field#getItems <em>Items</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Feature
+   * @return the meta object for the containment reference list '<em>Items</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Field#getItems()
+   * @see #getField()
    * @generated
    */
-  EClass getFeature();
+  EReference getField_Items();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Feature#isMany <em>Many</em>}'.
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Rectangle <em>Rectangle</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Many</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Feature#isMany()
-   * @see #getFeature()
+   * @return the meta object for class '<em>Rectangle</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Rectangle
    * @generated
    */
-  EAttribute getFeature_Many();
+  EClass getRectangle();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Feature#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Rectangle#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Rectangle#getX()
+   * @see #getRectangle()
+   * @generated
+   */
+  EAttribute getRectangle_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Rectangle#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Rectangle#getY()
+   * @see #getRectangle()
+   * @generated
+   */
+  EAttribute getRectangle_Y();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Hero <em>Hero</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Hero</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Hero
+   * @generated
+   */
+  EClass getHero();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.watercraftHQ.water.water.Hero#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Position</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Hero#getPosition()
+   * @see #getHero()
+   * @generated
+   */
+  EReference getHero_Position();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Hero#isIsBoss <em>Is Boss</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Boss</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Hero#isIsBoss()
+   * @see #getHero()
+   * @generated
+   */
+  EAttribute getHero_IsBoss();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Position <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Position</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Position
+   * @generated
+   */
+  EClass getPosition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Position#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Position#getX()
+   * @see #getPosition()
+   * @generated
+   */
+  EAttribute getPosition_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Position#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Position#getY()
+   * @see #getPosition()
+   * @generated
+   */
+  EAttribute getPosition_Y();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.watercraftHQ.water.water.Item <em>Item</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Item</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Item
+   * @generated
+   */
+  EClass getItem();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Item#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Feature#getName()
-   * @see #getFeature()
+   * @see org.xtext.watercraftHQ.water.water.Item#getName()
+   * @see #getItem()
    * @generated
    */
-  EAttribute getFeature_Name();
+  EAttribute getItem_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.watercraftHQ.water.water.Feature#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Item#getAttackBonus <em>Attack Bonus</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
-   * @see org.xtext.watercraftHQ.water.water.Feature#getType()
-   * @see #getFeature()
+   * @return the meta object for the attribute '<em>Attack Bonus</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Item#getAttackBonus()
+   * @see #getItem()
    * @generated
    */
-  EReference getFeature_Type();
+  EAttribute getItem_AttackBonus();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.watercraftHQ.water.water.Item#getDefenseBonus <em>Defense Bonus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Defense Bonus</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Item#getDefenseBonus()
+   * @see #getItem()
+   * @generated
+   */
+  EAttribute getItem_DefenseBonus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.watercraftHQ.water.water.Item#getLocation <em>Location</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Location</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Item#getLocation()
+   * @see #getItem()
+   * @generated
+   */
+  EReference getItem_Location();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.watercraftHQ.water.water.Item#getHero <em>Hero</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Hero</em>'.
+   * @see org.xtext.watercraftHQ.water.water.Item#getHero()
+   * @see #getItem()
+   * @generated
+   */
+  EReference getItem_Hero();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -385,14 +654,14 @@ public interface WaterPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.DomainmodelImpl <em>Domainmodel</em>}' class.
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.ComputerGameImpl <em>Computer Game</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.watercraftHQ.water.water.impl.DomainmodelImpl
-     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getDomainmodel()
+     * @see org.xtext.watercraftHQ.water.water.impl.ComputerGameImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getComputerGame()
      * @generated
      */
-    EClass DOMAINMODEL = eINSTANCE.getDomainmodel();
+    EClass COMPUTER_GAME = eINSTANCE.getComputerGame();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -400,7 +669,7 @@ public interface WaterPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOMAINMODEL__ELEMENTS = eINSTANCE.getDomainmodel_Elements();
+    EReference COMPUTER_GAME__ELEMENTS = eINSTANCE.getComputerGame_Elements();
 
     /**
      * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.TypeImpl <em>Type</em>}' class.
@@ -413,66 +682,14 @@ public interface WaterPackage extends EPackage
     EClass TYPE = eINSTANCE.getType();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.LevelImpl <em>Level</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.watercraftHQ.water.water.impl.LevelImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getLevel()
      * @generated
      */
-    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.DataTypeImpl <em>Data Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.watercraftHQ.water.water.impl.DataTypeImpl
-     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getDataType()
-     * @generated
-     */
-    EClass DATA_TYPE = eINSTANCE.getDataType();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.EntityImpl <em>Entity</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.watercraftHQ.water.water.impl.EntityImpl
-     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getEntity()
-     * @generated
-     */
-    EClass ENTITY = eINSTANCE.getEntity();
-
-    /**
-     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENTITY__SUPER_TYPE = eINSTANCE.getEntity_SuperType();
-
-    /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENTITY__FEATURES = eINSTANCE.getEntity_Features();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.FeatureImpl <em>Feature</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.watercraftHQ.water.water.impl.FeatureImpl
-     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getFeature()
-     * @generated
-     */
-    EClass FEATURE = eINSTANCE.getFeature();
-
-    /**
-     * The meta object literal for the '<em><b>Many</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE__MANY = eINSTANCE.getFeature_Many();
+    EClass LEVEL = eINSTANCE.getLevel();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -480,15 +697,177 @@ public interface WaterPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
+    EAttribute LEVEL__NAME = eINSTANCE.getLevel_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Field</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FEATURE__TYPE = eINSTANCE.getFeature_Type();
+    EReference LEVEL__FIELD = eINSTANCE.getLevel_Field();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.FieldImpl <em>Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.watercraftHQ.water.water.impl.FieldImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getField()
+     * @generated
+     */
+    EClass FIELD = eINSTANCE.getField();
+
+    /**
+     * The meta object literal for the '<em><b>Rectangle</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD__RECTANGLE = eINSTANCE.getField_Rectangle();
+
+    /**
+     * The meta object literal for the '<em><b>Heros</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD__HEROS = eINSTANCE.getField_Heros();
+
+    /**
+     * The meta object literal for the '<em><b>Items</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD__ITEMS = eINSTANCE.getField_Items();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.RectangleImpl <em>Rectangle</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.watercraftHQ.water.water.impl.RectangleImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getRectangle()
+     * @generated
+     */
+    EClass RECTANGLE = eINSTANCE.getRectangle();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECTANGLE__X = eINSTANCE.getRectangle_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECTANGLE__Y = eINSTANCE.getRectangle_Y();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.HeroImpl <em>Hero</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.watercraftHQ.water.water.impl.HeroImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getHero()
+     * @generated
+     */
+    EClass HERO = eINSTANCE.getHero();
+
+    /**
+     * The meta object literal for the '<em><b>Position</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HERO__POSITION = eINSTANCE.getHero_Position();
+
+    /**
+     * The meta object literal for the '<em><b>Is Boss</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HERO__IS_BOSS = eINSTANCE.getHero_IsBoss();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.PositionImpl <em>Position</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.watercraftHQ.water.water.impl.PositionImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getPosition()
+     * @generated
+     */
+    EClass POSITION = eINSTANCE.getPosition();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POSITION__X = eINSTANCE.getPosition_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POSITION__Y = eINSTANCE.getPosition_Y();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.watercraftHQ.water.water.impl.ItemImpl <em>Item</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.watercraftHQ.water.water.impl.ItemImpl
+     * @see org.xtext.watercraftHQ.water.water.impl.WaterPackageImpl#getItem()
+     * @generated
+     */
+    EClass ITEM = eINSTANCE.getItem();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ITEM__NAME = eINSTANCE.getItem_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Attack Bonus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ITEM__ATTACK_BONUS = eINSTANCE.getItem_AttackBonus();
+
+    /**
+     * The meta object literal for the '<em><b>Defense Bonus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ITEM__DEFENSE_BONUS = eINSTANCE.getItem_DefenseBonus();
+
+    /**
+     * The meta object literal for the '<em><b>Location</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ITEM__LOCATION = eINSTANCE.getItem_Location();
+
+    /**
+     * The meta object literal for the '<em><b>Hero</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ITEM__HERO = eINSTANCE.getItem_Hero();
 
   }
 

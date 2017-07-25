@@ -23,12 +23,12 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 	
-	public class DomainmodelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Domainmodel");
+	public class ComputerGameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.ComputerGame");
 		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cElementsTypeParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
-		//Domainmodel:
+		//ComputerGame:
 		//	elements+=Type*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -41,72 +41,44 @@ public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Type");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cLevelParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cHeroParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cItemParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Type:
-		//	DataType | Entity;
+		//	Level | Hero | Item;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DataType | Entity
+		//Level | Hero | Item
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//DataType
-		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
+		//Level
+		public RuleCall getLevelParserRuleCall_0() { return cLevelParserRuleCall_0; }
 		
-		//Entity
-		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
+		//Hero
+		public RuleCall getHeroParserRuleCall_1() { return cHeroParserRuleCall_1; }
+		
+		//Item
+		public RuleCall getItemParserRuleCall_2() { return cItemParserRuleCall_2; }
 	}
-	public class DataTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.DataType");
+	public class LevelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Level");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDatatypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLevelKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFieldAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFieldFieldParserRuleCall_2_0 = (RuleCall)cFieldAssignment_2.eContents().get(0);
 		
-		//DataType:
-		//	'datatype' name=ID;
+		//Level:
+		//	'level' name=ID field=Field;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'datatype' name=ID
+		//'level' name=ID field=Field
 		public Group getGroup() { return cGroup; }
 		
-		//'datatype'
-		public Keyword getDatatypeKeyword_0() { return cDatatypeKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class EntityElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Entity");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEntityKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cSuperTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cSuperTypeEntityCrossReference_2_1_0 = (CrossReference)cSuperTypeAssignment_2_1.eContents().get(0);
-		private final RuleCall cSuperTypeEntityIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cFeaturesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cFeaturesFeatureParserRuleCall_4_0 = (RuleCall)cFeaturesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Entity:
-		//	'entity' name=ID ('extends' superType=[Entity])? '{'
-		//	features+=Feature*
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'entity' name=ID ('extends' superType=[Entity])? '{' features+=Feature* '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'entity'
-		public Keyword getEntityKeyword_0() { return cEntityKeyword_0; }
+		//'level'
+		public Keyword getLevelKeyword_0() { return cLevelKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -114,57 +86,184 @@ public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//('extends' superType=[Entity])?
-		public Group getGroup_2() { return cGroup_2; }
+		//field=Field
+		public Assignment getFieldAssignment_2() { return cFieldAssignment_2; }
 		
-		//'extends'
-		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
-		
-		//superType=[Entity]
-		public Assignment getSuperTypeAssignment_2_1() { return cSuperTypeAssignment_2_1; }
-		
-		//[Entity]
-		public CrossReference getSuperTypeEntityCrossReference_2_1_0() { return cSuperTypeEntityCrossReference_2_1_0; }
-		
-		//ID
-		public RuleCall getSuperTypeEntityIDTerminalRuleCall_2_1_0_1() { return cSuperTypeEntityIDTerminalRuleCall_2_1_0_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//features+=Feature*
-		public Assignment getFeaturesAssignment_4() { return cFeaturesAssignment_4; }
-		
-		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_4_0() { return cFeaturesFeatureParserRuleCall_4_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		//Field
+		public RuleCall getFieldFieldParserRuleCall_2_0() { return cFieldFieldParserRuleCall_2_0; }
 	}
-	public class FeatureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Feature");
+	public class FieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Field");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cManyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cManyManyKeyword_0_0 = (Keyword)cManyAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTypeTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
-		private final RuleCall cTypeTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cTypeTypeCrossReference_3_0.eContents().get(1);
+		private final Keyword cFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cRectangleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRectangleRectangleParserRuleCall_1_0 = (RuleCall)cRectangleAssignment_1.eContents().get(0);
+		private final Assignment cHerosAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cHerosHeroParserRuleCall_2_0 = (RuleCall)cHerosAssignment_2.eContents().get(0);
+		private final Assignment cItemsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cItemsItemParserRuleCall_3_0 = (RuleCall)cItemsAssignment_3.eContents().get(0);
 		
-		//Feature:
-		//	many?='many'? name=ID ':' type=[Type];
+		//Field:
+		//	'field' rectangle=Rectangle heros+=Hero items+=Item*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//many?='many'? name=ID ':' type=[Type]
+		//'field' rectangle=Rectangle heros+=Hero items+=Item*
 		public Group getGroup() { return cGroup; }
 		
-		//many?='many'?
-		public Assignment getManyAssignment_0() { return cManyAssignment_0; }
+		//'field'
+		public Keyword getFieldKeyword_0() { return cFieldKeyword_0; }
 		
-		//'many'
-		public Keyword getManyManyKeyword_0_0() { return cManyManyKeyword_0_0; }
+		//rectangle=Rectangle
+		public Assignment getRectangleAssignment_1() { return cRectangleAssignment_1; }
+		
+		//Rectangle
+		public RuleCall getRectangleRectangleParserRuleCall_1_0() { return cRectangleRectangleParserRuleCall_1_0; }
+		
+		//heros+=Hero
+		public Assignment getHerosAssignment_2() { return cHerosAssignment_2; }
+		
+		//Hero
+		public RuleCall getHerosHeroParserRuleCall_2_0() { return cHerosHeroParserRuleCall_2_0; }
+		
+		//items+=Item*
+		public Assignment getItemsAssignment_3() { return cItemsAssignment_3; }
+		
+		//Item
+		public RuleCall getItemsItemParserRuleCall_3_0() { return cItemsItemParserRuleCall_3_0; }
+	}
+	public class RectangleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Rectangle");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRectangleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cXKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cXAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cXINTTerminalRuleCall_2_0 = (RuleCall)cXAssignment_2.eContents().get(0);
+		private final Keyword cYKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cYAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cYINTTerminalRuleCall_4_0 = (RuleCall)cYAssignment_4.eContents().get(0);
+		
+		//Rectangle:
+		//	'rectangle' 'X' X=INT 'Y' Y=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'rectangle' 'X' X=INT 'Y' Y=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'rectangle'
+		public Keyword getRectangleKeyword_0() { return cRectangleKeyword_0; }
+		
+		//'X'
+		public Keyword getXKeyword_1() { return cXKeyword_1; }
+		
+		//X=INT
+		public Assignment getXAssignment_2() { return cXAssignment_2; }
+		
+		//INT
+		public RuleCall getXINTTerminalRuleCall_2_0() { return cXINTTerminalRuleCall_2_0; }
+		
+		//'Y'
+		public Keyword getYKeyword_3() { return cYKeyword_3; }
+		
+		//Y=INT
+		public Assignment getYAssignment_4() { return cYAssignment_4; }
+		
+		//INT
+		public RuleCall getYINTTerminalRuleCall_4_0() { return cYINTTerminalRuleCall_4_0; }
+	}
+	public class HeroElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Hero");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHeroKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cPositionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPositionPositionParserRuleCall_1_0 = (RuleCall)cPositionAssignment_1.eContents().get(0);
+		private final Assignment cIsBossAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cIsBossIsBossKeyword_2_0 = (Keyword)cIsBossAssignment_2.eContents().get(0);
+		
+		//Hero:
+		//	'hero' position=Position isBoss?='isBoss'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'hero' position=Position isBoss?='isBoss'?
+		public Group getGroup() { return cGroup; }
+		
+		//'hero'
+		public Keyword getHeroKeyword_0() { return cHeroKeyword_0; }
+		
+		//position=Position
+		public Assignment getPositionAssignment_1() { return cPositionAssignment_1; }
+		
+		//Position
+		public RuleCall getPositionPositionParserRuleCall_1_0() { return cPositionPositionParserRuleCall_1_0; }
+		
+		//isBoss?='isBoss'?
+		public Assignment getIsBossAssignment_2() { return cIsBossAssignment_2; }
+		
+		//'isBoss'
+		public Keyword getIsBossIsBossKeyword_2_0() { return cIsBossIsBossKeyword_2_0; }
+	}
+	public class PositionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Position");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cXKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cXINTTerminalRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
+		private final Keyword cYKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cYAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cYINTTerminalRuleCall_3_0 = (RuleCall)cYAssignment_3.eContents().get(0);
+		
+		//Position:
+		//	'X' X=INT 'Y' Y=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'X' X=INT 'Y' Y=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'X'
+		public Keyword getXKeyword_0() { return cXKeyword_0; }
+		
+		//X=INT
+		public Assignment getXAssignment_1() { return cXAssignment_1; }
+		
+		//INT
+		public RuleCall getXINTTerminalRuleCall_1_0() { return cXINTTerminalRuleCall_1_0; }
+		
+		//'Y'
+		public Keyword getYKeyword_2() { return cYKeyword_2; }
+		
+		//Y=INT
+		public Assignment getYAssignment_3() { return cYAssignment_3; }
+		
+		//INT
+		public RuleCall getYINTTerminalRuleCall_3_0() { return cYINTTerminalRuleCall_3_0; }
+	}
+	public class ItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.watercraftHQ.water.Water.Item");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cItemKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cAttackBonusKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAttackBonusAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAttackBonusINTTerminalRuleCall_3_0 = (RuleCall)cAttackBonusAssignment_3.eContents().get(0);
+		private final Keyword cDefenseBonusKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDefenseBonusAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDefenseBonusINTTerminalRuleCall_5_0 = (RuleCall)cDefenseBonusAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
+		private final Assignment cLocationAssignment_6_0 = (Assignment)cAlternatives_6.eContents().get(0);
+		private final RuleCall cLocationPositionParserRuleCall_6_0_0 = (RuleCall)cLocationAssignment_6_0.eContents().get(0);
+		private final Assignment cHeroAssignment_6_1 = (Assignment)cAlternatives_6.eContents().get(1);
+		private final CrossReference cHeroHeroCrossReference_6_1_0 = (CrossReference)cHeroAssignment_6_1.eContents().get(0);
+		private final RuleCall cHeroHeroIDTerminalRuleCall_6_1_0_1 = (RuleCall)cHeroHeroCrossReference_6_1_0.eContents().get(1);
+		
+		//Item:
+		//	'item' name=ID 'attackBonus' attackBonus=INT 'defenseBonus' defenseBonus=INT (location=Position | hero=[Hero]);
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'item' name=ID 'attackBonus' attackBonus=INT 'defenseBonus' defenseBonus=INT (location=Position | hero=[Hero])
+		public Group getGroup() { return cGroup; }
+		
+		//'item'
+		public Keyword getItemKeyword_0() { return cItemKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -172,25 +271,52 @@ public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		//'attackBonus'
+		public Keyword getAttackBonusKeyword_2() { return cAttackBonusKeyword_2; }
 		
-		//type=[Type]
-		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+		//attackBonus=INT
+		public Assignment getAttackBonusAssignment_3() { return cAttackBonusAssignment_3; }
 		
-		//[Type]
-		public CrossReference getTypeTypeCrossReference_3_0() { return cTypeTypeCrossReference_3_0; }
+		//INT
+		public RuleCall getAttackBonusINTTerminalRuleCall_3_0() { return cAttackBonusINTTerminalRuleCall_3_0; }
+		
+		//'defenseBonus'
+		public Keyword getDefenseBonusKeyword_4() { return cDefenseBonusKeyword_4; }
+		
+		//defenseBonus=INT
+		public Assignment getDefenseBonusAssignment_5() { return cDefenseBonusAssignment_5; }
+		
+		//INT
+		public RuleCall getDefenseBonusINTTerminalRuleCall_5_0() { return cDefenseBonusINTTerminalRuleCall_5_0; }
+		
+		//location=Position | hero=[Hero]
+		public Alternatives getAlternatives_6() { return cAlternatives_6; }
+		
+		//location=Position
+		public Assignment getLocationAssignment_6_0() { return cLocationAssignment_6_0; }
+		
+		//Position
+		public RuleCall getLocationPositionParserRuleCall_6_0_0() { return cLocationPositionParserRuleCall_6_0_0; }
+		
+		//hero=[Hero]
+		public Assignment getHeroAssignment_6_1() { return cHeroAssignment_6_1; }
+		
+		//[Hero]
+		public CrossReference getHeroHeroCrossReference_6_1_0() { return cHeroHeroCrossReference_6_1_0; }
 		
 		//ID
-		public RuleCall getTypeTypeIDTerminalRuleCall_3_0_1() { return cTypeTypeIDTerminalRuleCall_3_0_1; }
+		public RuleCall getHeroHeroIDTerminalRuleCall_6_1_0_1() { return cHeroHeroIDTerminalRuleCall_6_1_0_1; }
 	}
 	
 	
-	private final DomainmodelElements pDomainmodel;
+	private final ComputerGameElements pComputerGame;
 	private final TypeElements pType;
-	private final DataTypeElements pDataType;
-	private final EntityElements pEntity;
-	private final FeatureElements pFeature;
+	private final LevelElements pLevel;
+	private final FieldElements pField;
+	private final RectangleElements pRectangle;
+	private final HeroElements pHero;
+	private final PositionElements pPosition;
+	private final ItemElements pItem;
 	
 	private final Grammar grammar;
 	
@@ -201,11 +327,14 @@ public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pDomainmodel = new DomainmodelElements();
+		this.pComputerGame = new ComputerGameElements();
 		this.pType = new TypeElements();
-		this.pDataType = new DataTypeElements();
-		this.pEntity = new EntityElements();
-		this.pFeature = new FeatureElements();
+		this.pLevel = new LevelElements();
+		this.pField = new FieldElements();
+		this.pRectangle = new RectangleElements();
+		this.pHero = new HeroElements();
+		this.pPosition = new PositionElements();
+		this.pItem = new ItemElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -235,18 +364,18 @@ public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Domainmodel:
+	//ComputerGame:
 	//	elements+=Type*;
-	public DomainmodelElements getDomainmodelAccess() {
-		return pDomainmodel;
+	public ComputerGameElements getComputerGameAccess() {
+		return pComputerGame;
 	}
 	
-	public ParserRule getDomainmodelRule() {
-		return getDomainmodelAccess().getRule();
+	public ParserRule getComputerGameRule() {
+		return getComputerGameAccess().getRule();
 	}
 	
 	//Type:
-	//	DataType | Entity;
+	//	Level | Hero | Item;
 	public TypeElements getTypeAccess() {
 		return pType;
 	}
@@ -255,36 +384,64 @@ public class WaterGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeAccess().getRule();
 	}
 	
-	//DataType:
-	//	'datatype' name=ID;
-	public DataTypeElements getDataTypeAccess() {
-		return pDataType;
+	//Level:
+	//	'level' name=ID field=Field;
+	public LevelElements getLevelAccess() {
+		return pLevel;
 	}
 	
-	public ParserRule getDataTypeRule() {
-		return getDataTypeAccess().getRule();
+	public ParserRule getLevelRule() {
+		return getLevelAccess().getRule();
 	}
 	
-	//Entity:
-	//	'entity' name=ID ('extends' superType=[Entity])? '{'
-	//	features+=Feature*
-	//	'}';
-	public EntityElements getEntityAccess() {
-		return pEntity;
+	//Field:
+	//	'field' rectangle=Rectangle heros+=Hero items+=Item*;
+	public FieldElements getFieldAccess() {
+		return pField;
 	}
 	
-	public ParserRule getEntityRule() {
-		return getEntityAccess().getRule();
+	public ParserRule getFieldRule() {
+		return getFieldAccess().getRule();
 	}
 	
-	//Feature:
-	//	many?='many'? name=ID ':' type=[Type];
-	public FeatureElements getFeatureAccess() {
-		return pFeature;
+	//Rectangle:
+	//	'rectangle' 'X' X=INT 'Y' Y=INT;
+	public RectangleElements getRectangleAccess() {
+		return pRectangle;
 	}
 	
-	public ParserRule getFeatureRule() {
-		return getFeatureAccess().getRule();
+	public ParserRule getRectangleRule() {
+		return getRectangleAccess().getRule();
+	}
+	
+	//Hero:
+	//	'hero' position=Position isBoss?='isBoss'?;
+	public HeroElements getHeroAccess() {
+		return pHero;
+	}
+	
+	public ParserRule getHeroRule() {
+		return getHeroAccess().getRule();
+	}
+	
+	//Position:
+	//	'X' X=INT 'Y' Y=INT;
+	public PositionElements getPositionAccess() {
+		return pPosition;
+	}
+	
+	public ParserRule getPositionRule() {
+		return getPositionAccess().getRule();
+	}
+	
+	//Item:
+	//	'item' name=ID 'attackBonus' attackBonus=INT 'defenseBonus' defenseBonus=INT (location=Position | hero=[Hero]);
+	public ItemElements getItemAccess() {
+		return pItem;
+	}
+	
+	public ParserRule getItemRule() {
+		return getItemAccess().getRule();
 	}
 	
 	//terminal ID:

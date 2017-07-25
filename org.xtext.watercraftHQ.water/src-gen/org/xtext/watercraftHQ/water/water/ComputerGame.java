@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Domainmodel</b></em>'.
+ * A representation of the model object '<em><b>Computer Game</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.watercraftHQ.water.water.Domainmodel#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.watercraftHQ.water.water.ComputerGame#getElements <em>Elements</em>}</li>
  * </ul>
  *
- * @see org.xtext.watercraftHQ.water.water.WaterPackage#getDomainmodel()
+ * @see org.xtext.watercraftHQ.water.water.WaterPackage#getComputerGame()
  * @model
  * @generated
  */
-public interface Domainmodel extends EObject
+public interface ComputerGame extends EObject
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
@@ -35,10 +35,10 @@ public interface Domainmodel extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see org.xtext.watercraftHQ.water.water.WaterPackage#getDomainmodel_Elements()
+   * @see org.xtext.watercraftHQ.water.water.WaterPackage#getComputerGame_Elements()
    * @model containment="true"
    * @generated
    */
   EList<Type> getElements();
 
-} // Domainmodel
+} // ComputerGame

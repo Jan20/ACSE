@@ -2,19 +2,32 @@ grammar org.xtext.watercraftHQ.water.Water with org.eclipse.xtext.common.Termina
 
 generate water "http://www.xtext.org/watercraftHQ/water/Water"
 
-Domainmodel :
+ComputerGame :
     (elements+=Type)*;
   
 Type:
-    DataType | Entity;
+    Level | Hero | Item;
   
-DataType:
-    'datatype' name=ID;
+Level:
+    'level' name=ID field=Field;
  
-Entity:
-    'entity' name=ID ('extends' superType=[Entity])? '{'
-        (features+=Feature)*
-    '}';
+ Field:
+ 	'field' rectangle=Rectangle heros+=Hero items+=Item*
+ ;
  
-Feature:
-    (many?='many')? name=ID ':' type=[Type];
+ Rectangle:
+ 	'rectangle' 'X' X=INT 'Y' Y=INT
+ ;
+ 
+ Hero:
+ 	'hero' name=ID position=Position (isBoss?='isBoss')?
+ ;
+
+ Position: 
+ 	'position' X=INT Y=INT
+ ;
+ 
+ Item:
+ 	'item' name=ID 'attackBonus' attackBonus=INT 'defenseBonus' defenseBonus=INT (location=Position | hero=[Hero])
+ ;
+ 

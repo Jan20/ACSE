@@ -24,13 +24,13 @@ public interface WaterFactory extends EFactory
   WaterFactory eINSTANCE = org.xtext.watercraftHQ.water.water.impl.WaterFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Domainmodel</em>'.
+   * Returns a new object of class '<em>Computer Game</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Domainmodel</em>'.
+   * @return a new object of class '<em>Computer Game</em>'.
    * @generated
    */
-  Domainmodel createDomainmodel();
+  ComputerGame createComputerGame();
 
   /**
    * Returns a new object of class '<em>Type</em>'.
@@ -42,31 +42,58 @@ public interface WaterFactory extends EFactory
   Type createType();
 
   /**
-   * Returns a new object of class '<em>Data Type</em>'.
+   * Returns a new object of class '<em>Level</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type</em>'.
+   * @return a new object of class '<em>Level</em>'.
    * @generated
    */
-  DataType createDataType();
+  Level createLevel();
 
   /**
-   * Returns a new object of class '<em>Entity</em>'.
+   * Returns a new object of class '<em>Field</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity</em>'.
+   * @return a new object of class '<em>Field</em>'.
    * @generated
    */
-  Entity createEntity();
+  Field createField();
 
   /**
-   * Returns a new object of class '<em>Feature</em>'.
+   * Returns a new object of class '<em>Rectangle</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature</em>'.
+   * @return a new object of class '<em>Rectangle</em>'.
    * @generated
    */
-  Feature createFeature();
+  Rectangle createRectangle();
+
+  /**
+   * Returns a new object of class '<em>Hero</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hero</em>'.
+   * @generated
+   */
+  Hero createHero();
+
+  /**
+   * Returns a new object of class '<em>Position</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Position</em>'.
+   * @generated
+   */
+  Position createPosition();
+
+  /**
+   * Returns a new object of class '<em>Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item</em>'.
+   * @generated
+   */
+  Item createItem();
 
   /**
    * Returns the package supported by this factory.

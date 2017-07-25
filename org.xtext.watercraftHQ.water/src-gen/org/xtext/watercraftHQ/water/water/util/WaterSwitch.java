@@ -73,10 +73,10 @@ public class WaterSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case WaterPackage.DOMAINMODEL:
+      case WaterPackage.COMPUTER_GAME:
       {
-        Domainmodel domainmodel = (Domainmodel)theEObject;
-        T result = caseDomainmodel(domainmodel);
+        ComputerGame computerGame = (ComputerGame)theEObject;
+        T result = caseComputerGame(computerGame);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -87,26 +87,48 @@ public class WaterSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WaterPackage.DATA_TYPE:
+      case WaterPackage.LEVEL:
       {
-        DataType dataType = (DataType)theEObject;
-        T result = caseDataType(dataType);
-        if (result == null) result = caseType(dataType);
+        Level level = (Level)theEObject;
+        T result = caseLevel(level);
+        if (result == null) result = caseType(level);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WaterPackage.ENTITY:
+      case WaterPackage.FIELD:
       {
-        Entity entity = (Entity)theEObject;
-        T result = caseEntity(entity);
-        if (result == null) result = caseType(entity);
+        Field field = (Field)theEObject;
+        T result = caseField(field);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WaterPackage.FEATURE:
+      case WaterPackage.RECTANGLE:
       {
-        Feature feature = (Feature)theEObject;
-        T result = caseFeature(feature);
+        Rectangle rectangle = (Rectangle)theEObject;
+        T result = caseRectangle(rectangle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WaterPackage.HERO:
+      {
+        Hero hero = (Hero)theEObject;
+        T result = caseHero(hero);
+        if (result == null) result = caseType(hero);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WaterPackage.POSITION:
+      {
+        Position position = (Position)theEObject;
+        T result = casePosition(position);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WaterPackage.ITEM:
+      {
+        Item item = (Item)theEObject;
+        T result = caseItem(item);
+        if (result == null) result = caseType(item);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,17 +137,17 @@ public class WaterSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Domainmodel</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Computer Game</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Domainmodel</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Computer Game</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDomainmodel(Domainmodel object)
+  public T caseComputerGame(ComputerGame object)
   {
     return null;
   }
@@ -147,49 +169,97 @@ public class WaterSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Level</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Level</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDataType(DataType object)
+  public T caseLevel(Level object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Field</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEntity(Entity object)
+  public T caseField(Field object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rectangle</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rectangle</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeature(Feature object)
+  public T caseRectangle(Rectangle object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hero</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hero</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHero(Hero object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Position</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Position</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePosition(Position object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItem(Item object)
   {
     return null;
   }

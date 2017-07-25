@@ -6,21 +6,37 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.13">
   <genPackages prefix="Water" basePackage="org.xtext.watercraftHQ.water" disposableProviderFactory="true"
       fileExtensions="water" ecorePackage="Water.ecore#/">
-    <genClasses ecoreClass="Water.ecore#//Domainmodel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Domainmodel/elements"/>
+    <genClasses ecoreClass="Water.ecore#//ComputerGame">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//ComputerGame/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Water.ecore#//Type">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Type/name"/>
+    <genClasses ecoreClass="Water.ecore#//Type"/>
+    <genClasses ecoreClass="Water.ecore#//Level">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Level/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Level/field"/>
     </genClasses>
-    <genClasses ecoreClass="Water.ecore#//DataType"/>
-    <genClasses ecoreClass="Water.ecore#//Entity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Water.ecore#//Entity/superType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Entity/features"/>
+    <genClasses ecoreClass="Water.ecore#//Field">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Field/rectangle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Field/heros"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Field/items"/>
     </genClasses>
-    <genClasses ecoreClass="Water.ecore#//Feature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Feature/many"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Feature/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Water.ecore#//Feature/type"/>
+    <genClasses ecoreClass="Water.ecore#//Rectangle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Rectangle/X"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Rectangle/Y"/>
+    </genClasses>
+    <genClasses ecoreClass="Water.ecore#//Hero">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Hero/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Hero/isBoss"/>
+    </genClasses>
+    <genClasses ecoreClass="Water.ecore#//Position">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Position/X"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Position/Y"/>
+    </genClasses>
+    <genClasses ecoreClass="Water.ecore#//Item">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Item/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Item/attackBonus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Water.ecore#//Item/defenseBonus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Water.ecore#//Item/location"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Water.ecore#//Item/hero"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

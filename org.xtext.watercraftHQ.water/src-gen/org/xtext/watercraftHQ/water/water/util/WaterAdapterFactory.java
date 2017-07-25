@@ -76,9 +76,9 @@ public class WaterAdapterFactory extends AdapterFactoryImpl
     new WaterSwitch<Adapter>()
     {
       @Override
-      public Adapter caseDomainmodel(Domainmodel object)
+      public Adapter caseComputerGame(ComputerGame object)
       {
-        return createDomainmodelAdapter();
+        return createComputerGameAdapter();
       }
       @Override
       public Adapter caseType(Type object)
@@ -86,19 +86,34 @@ public class WaterAdapterFactory extends AdapterFactoryImpl
         return createTypeAdapter();
       }
       @Override
-      public Adapter caseDataType(DataType object)
+      public Adapter caseLevel(Level object)
       {
-        return createDataTypeAdapter();
+        return createLevelAdapter();
       }
       @Override
-      public Adapter caseEntity(Entity object)
+      public Adapter caseField(Field object)
       {
-        return createEntityAdapter();
+        return createFieldAdapter();
       }
       @Override
-      public Adapter caseFeature(Feature object)
+      public Adapter caseRectangle(Rectangle object)
       {
-        return createFeatureAdapter();
+        return createRectangleAdapter();
+      }
+      @Override
+      public Adapter caseHero(Hero object)
+      {
+        return createHeroAdapter();
+      }
+      @Override
+      public Adapter casePosition(Position object)
+      {
+        return createPositionAdapter();
+      }
+      @Override
+      public Adapter caseItem(Item object)
+      {
+        return createItemAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +138,16 @@ public class WaterAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Domainmodel <em>Domainmodel</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.ComputerGame <em>Computer Game</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.watercraftHQ.water.water.Domainmodel
+   * @see org.xtext.watercraftHQ.water.water.ComputerGame
    * @generated
    */
-  public Adapter createDomainmodelAdapter()
+  public Adapter createComputerGameAdapter()
   {
     return null;
   }
@@ -153,46 +168,91 @@ public class WaterAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.DataType <em>Data Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Level <em>Level</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.watercraftHQ.water.water.DataType
+   * @see org.xtext.watercraftHQ.water.water.Level
    * @generated
    */
-  public Adapter createDataTypeAdapter()
+  public Adapter createLevelAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Entity <em>Entity</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Field <em>Field</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.watercraftHQ.water.water.Entity
+   * @see org.xtext.watercraftHQ.water.water.Field
    * @generated
    */
-  public Adapter createEntityAdapter()
+  public Adapter createFieldAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Feature <em>Feature</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Rectangle <em>Rectangle</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.watercraftHQ.water.water.Feature
+   * @see org.xtext.watercraftHQ.water.water.Rectangle
    * @generated
    */
-  public Adapter createFeatureAdapter()
+  public Adapter createRectangleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Hero <em>Hero</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.watercraftHQ.water.water.Hero
+   * @generated
+   */
+  public Adapter createHeroAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Position <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.watercraftHQ.water.water.Position
+   * @generated
+   */
+  public Adapter createPositionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.watercraftHQ.water.water.Item <em>Item</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.watercraftHQ.water.water.Item
+   * @generated
+   */
+  public Adapter createItemAdapter()
   {
     return null;
   }

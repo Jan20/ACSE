@@ -10,10 +10,13 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.watercraftHQ.water.water.DataType;
-import org.xtext.watercraftHQ.water.water.Domainmodel;
-import org.xtext.watercraftHQ.water.water.Entity;
-import org.xtext.watercraftHQ.water.water.Feature;
+import org.xtext.watercraftHQ.water.water.ComputerGame;
+import org.xtext.watercraftHQ.water.water.Field;
+import org.xtext.watercraftHQ.water.water.Hero;
+import org.xtext.watercraftHQ.water.water.Item;
+import org.xtext.watercraftHQ.water.water.Level;
+import org.xtext.watercraftHQ.water.water.Position;
+import org.xtext.watercraftHQ.water.water.Rectangle;
 import org.xtext.watercraftHQ.water.water.Type;
 import org.xtext.watercraftHQ.water.water.WaterFactory;
 import org.xtext.watercraftHQ.water.water.WaterPackage;
@@ -31,7 +34,7 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass domainmodelEClass = null;
+  private EClass computerGameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -45,21 +48,42 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass dataTypeEClass = null;
+  private EClass levelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass entityEClass = null;
+  private EClass fieldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass featureEClass = null;
+  private EClass rectangleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass heroEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass positionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass itemEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -129,9 +153,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDomainmodel()
+  public EClass getComputerGame()
   {
-    return domainmodelEClass;
+    return computerGameEClass;
   }
 
   /**
@@ -139,9 +163,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDomainmodel_Elements()
+  public EReference getComputerGame_Elements()
   {
-    return (EReference)domainmodelEClass.getEStructuralFeatures().get(0);
+    return (EReference)computerGameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -159,9 +183,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getType_Name()
+  public EClass getLevel()
   {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+    return levelEClass;
   }
 
   /**
@@ -169,9 +193,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDataType()
+  public EAttribute getLevel_Name()
   {
-    return dataTypeEClass;
+    return (EAttribute)levelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -179,9 +203,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEntity()
+  public EReference getLevel_Field()
   {
-    return entityEClass;
+    return (EReference)levelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -189,9 +213,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntity_SuperType()
+  public EClass getField()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(0);
+    return fieldEClass;
   }
 
   /**
@@ -199,9 +223,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntity_Features()
+  public EReference getField_Rectangle()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(1);
+    return (EReference)fieldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -209,9 +233,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFeature()
+  public EReference getField_Heros()
   {
-    return featureEClass;
+    return (EReference)fieldEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -219,9 +243,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Many()
+  public EReference getField_Items()
   {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
+    return (EReference)fieldEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -229,9 +253,9 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Name()
+  public EClass getRectangle()
   {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
+    return rectangleEClass;
   }
 
   /**
@@ -239,9 +263,139 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFeature_Type()
+  public EAttribute getRectangle_X()
   {
-    return (EReference)featureEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)rectangleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRectangle_Y()
+  {
+    return (EAttribute)rectangleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHero()
+  {
+    return heroEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getHero_Position()
+  {
+    return (EReference)heroEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHero_IsBoss()
+  {
+    return (EAttribute)heroEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPosition()
+  {
+    return positionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPosition_X()
+  {
+    return (EAttribute)positionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPosition_Y()
+  {
+    return (EAttribute)positionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getItem()
+  {
+    return itemEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getItem_Name()
+  {
+    return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getItem_AttackBonus()
+  {
+    return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getItem_DefenseBonus()
+  {
+    return (EAttribute)itemEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getItem_Location()
+  {
+    return (EReference)itemEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getItem_Hero()
+  {
+    return (EReference)itemEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -274,22 +428,38 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
     isCreated = true;
 
     // Create classes and their features
-    domainmodelEClass = createEClass(DOMAINMODEL);
-    createEReference(domainmodelEClass, DOMAINMODEL__ELEMENTS);
+    computerGameEClass = createEClass(COMPUTER_GAME);
+    createEReference(computerGameEClass, COMPUTER_GAME__ELEMENTS);
 
     typeEClass = createEClass(TYPE);
-    createEAttribute(typeEClass, TYPE__NAME);
 
-    dataTypeEClass = createEClass(DATA_TYPE);
+    levelEClass = createEClass(LEVEL);
+    createEAttribute(levelEClass, LEVEL__NAME);
+    createEReference(levelEClass, LEVEL__FIELD);
 
-    entityEClass = createEClass(ENTITY);
-    createEReference(entityEClass, ENTITY__SUPER_TYPE);
-    createEReference(entityEClass, ENTITY__FEATURES);
+    fieldEClass = createEClass(FIELD);
+    createEReference(fieldEClass, FIELD__RECTANGLE);
+    createEReference(fieldEClass, FIELD__HEROS);
+    createEReference(fieldEClass, FIELD__ITEMS);
 
-    featureEClass = createEClass(FEATURE);
-    createEAttribute(featureEClass, FEATURE__MANY);
-    createEAttribute(featureEClass, FEATURE__NAME);
-    createEReference(featureEClass, FEATURE__TYPE);
+    rectangleEClass = createEClass(RECTANGLE);
+    createEAttribute(rectangleEClass, RECTANGLE__X);
+    createEAttribute(rectangleEClass, RECTANGLE__Y);
+
+    heroEClass = createEClass(HERO);
+    createEReference(heroEClass, HERO__POSITION);
+    createEAttribute(heroEClass, HERO__IS_BOSS);
+
+    positionEClass = createEClass(POSITION);
+    createEAttribute(positionEClass, POSITION__X);
+    createEAttribute(positionEClass, POSITION__Y);
+
+    itemEClass = createEClass(ITEM);
+    createEAttribute(itemEClass, ITEM__NAME);
+    createEAttribute(itemEClass, ITEM__ATTACK_BONUS);
+    createEAttribute(itemEClass, ITEM__DEFENSE_BONUS);
+    createEReference(itemEClass, ITEM__LOCATION);
+    createEReference(itemEClass, ITEM__HERO);
   }
 
   /**
@@ -321,26 +491,43 @@ public class WaterPackageImpl extends EPackageImpl implements WaterPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    dataTypeEClass.getESuperTypes().add(this.getType());
-    entityEClass.getESuperTypes().add(this.getType());
+    levelEClass.getESuperTypes().add(this.getType());
+    heroEClass.getESuperTypes().add(this.getType());
+    itemEClass.getESuperTypes().add(this.getType());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(domainmodelEClass, Domainmodel.class, "Domainmodel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDomainmodel_Elements(), this.getType(), null, "elements", null, 0, -1, Domainmodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(computerGameEClass, ComputerGame.class, "ComputerGame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComputerGame_Elements(), this.getType(), null, "elements", null, 0, -1, ComputerGame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(levelEClass, Level.class, "Level", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLevel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLevel_Field(), this.getField(), null, "field", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntity_SuperType(), this.getEntity(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getField_Rectangle(), this.getRectangle(), null, "rectangle", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getField_Heros(), this.getHero(), null, "heros", null, 0, -1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getField_Items(), this.getItem(), null, "items", null, 0, -1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeature_Many(), ecorePackage.getEBoolean(), "many", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeature_Type(), this.getType(), null, "type", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(rectangleEClass, Rectangle.class, "Rectangle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRectangle_X(), ecorePackage.getEInt(), "X", null, 0, 1, Rectangle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRectangle_Y(), ecorePackage.getEInt(), "Y", null, 0, 1, Rectangle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(heroEClass, Hero.class, "Hero", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getHero_Position(), this.getPosition(), null, "position", null, 0, 1, Hero.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHero_IsBoss(), ecorePackage.getEBoolean(), "isBoss", null, 0, 1, Hero.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(positionEClass, Position.class, "Position", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPosition_X(), ecorePackage.getEInt(), "X", null, 0, 1, Position.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPosition_Y(), ecorePackage.getEInt(), "Y", null, 0, 1, Position.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getItem_AttackBonus(), ecorePackage.getEInt(), "attackBonus", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getItem_DefenseBonus(), ecorePackage.getEInt(), "defenseBonus", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getItem_Location(), this.getPosition(), null, "location", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getItem_Hero(), this.getHero(), null, "hero", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

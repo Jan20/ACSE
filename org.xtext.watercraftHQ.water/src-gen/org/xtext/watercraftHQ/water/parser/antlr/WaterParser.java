@@ -27,7 +27,7 @@ public class WaterParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Domainmodel";
+		return "ComputerGame";
 	}
 
 	public WaterGrammarAccess getGrammarAccess() {
